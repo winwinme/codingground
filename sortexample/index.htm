@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Try jQuery Online</title>   
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+$(document).ready(function() {
+  $('#ticket').sortable({
+      update:function(){
+          var getIdStr = $(this).sortable('toArray').toString();
+          $('#ids').text(getIdStr);
+      }
+  })
+  
+
+});
+
+</script>
+<style>
+*{margin:0;padding:0;list-style:none;}
+.ticket {line-height:25px;width:100px;}
+.ticket li{padding:2px 4px; background:pink; margin:4px 0 2px 4px;}
+</style>
+</head>
+<body>
+
+<ul class='ticket' id='ticket'>
+    <li id='01'>成人票01</li>
+    <li id='02'>成人票02</li>
+    <li id='03'>成人票03</li>
+    <li id='04'>成人票04</li>
+</ul>
+
+<p id="ids"></p>
+
+</body>
+</html>
